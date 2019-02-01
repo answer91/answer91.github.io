@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Abouts on King</title>
-    <link>https://answer91.github.io/about/</link>
-    <description>Recent content in Abouts on King</description>
+    <title>About on King</title>
+    <link>http://answer91.github.io/about/</link>
+    <description>Recent content in About on King</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>wwkanswer@gmail.com (answer-king)</managingEditor>
@@ -11,16 +11,16 @@
     <copyright>(c) 2019 answer-king</copyright>
     <lastBuildDate>Thu, 31 Jan 2019 16:46:40 +0800</lastBuildDate>
     
-	<atom:link href="https://answer91.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://answer91.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://answer91.github.io/about/about/</link>
+      <link>http://answer91.github.io/about/about/</link>
       <pubDate>Thu, 31 Jan 2019 16:46:40 +0800</pubDate>
       <author>wwkanswer@gmail.com (answer-king)</author>
-      <guid>https://answer91.github.io/about/about/</guid>
-      <description>王文婷，我爱你!!</description>
+      <guid>http://answer91.github.io/about/about/</guid>
+      <description>123455</description>
     </item>
     
   </channel>

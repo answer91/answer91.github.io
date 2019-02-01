@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Second Blog on King</title>
+    <link>http://answer91.github.io/posts/nextpost/</link>
+    <description>Recent content in Second Blog on King</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>wwkanswer@gmail.com (answer-king)</managingEditor>
+    <webMaster>wwkanswer@gmail.com (answer-king)</webMaster>
+    <copyright>(c) 2019 answer-king</copyright>
+    <lastBuildDate>Fri, 14 Sep 2018 14:31:34 +0800</lastBuildDate>
+    
+	<atom:link href="http://answer91.github.io/posts/nextpost/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First</title>
+      <link>http://answer91.github.io/posts/nextpost/first/</link>
+      <pubDate>Fri, 14 Sep 2018 14:31:34 +0800</pubDate>
+      <author>wwkanswer@gmail.com (answer-king)</author>
+      <guid>http://answer91.github.io/posts/nextpost/first/</guid>
+      <description>I&amp;rsquo;m King!
+123123123123</description>
+    </item>
+    
+  </channel>
+</rss>
