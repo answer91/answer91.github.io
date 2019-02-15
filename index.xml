@@ -9,10 +9,31 @@
     <managingEditor>wwkanswer@gmail.com (answer-king)</managingEditor>
     <webMaster>wwkanswer@gmail.com (answer-king)</webMaster>
     <copyright>©2019 answer-king</copyright>
-    <lastBuildDate>Fri, 15 Feb 2019 15:20:40 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Feb 2019 17:28:40 +0800</lastBuildDate>
     
 	<atom:link href="http://answer91.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hugo</title>
+      <link>http://answer91.github.io/learning/hugo%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Fri, 15 Feb 2019 17:28:40 +0800</pubDate>
+      <author>wwkanswer@gmail.com (answer-king)</author>
+      <guid>http://answer91.github.io/learning/hugo%E6%96%87%E6%A1%A3/</guid>
+      <description>一、hugo安装 Hugo是golang编写的开源快速搭建静态网站引擎，官方文档https://gohugo.io/getting-started/
+这里以Linux系统为例进行安装，mac及windows系统安装可查看官方文档。
+1、下载对应系统版本的release https://github.com/gohugoio/hugo/releases 将release文件放在/usr/local/bin目录下，这样hugo可以在任意地方运行，或者将hugo所在目录加入环境变量中。
+2、下载GitHub源码进行编译安装（需要下载Go1.11以上版本） mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install  安装好后可以运行下面命令查看是否安装成功
+hugo version  二、生成静态网页 1、生成网页 $ hugo new site abc.com $ tree . ├── archetypes │ └── default.md ├── config.toml ├── content ├── data ├── layouts ├── static └── themes  通过hugo new site命令生成abc.com静态网页目录，目录结构如上。
+ archetypes保存了所写文档的格式
+ config.toml文件保存了相关配置信息（hugo支持yaml、toml、json三种格式）
+ content中保存了所写的具体文档内容
+ data是对不同结构的配置信息
+ layouts保存对应网页显示的信息
+ static保存了网页的图片布局等信息
+ themes是主题信息
+  进入abc.</description>
+    </item>
     
     <item>
       <title>Dgraph问题排查方法</title>

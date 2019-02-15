@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Tech  &middot; King</title>
+  <title>Hugo  &middot; King</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -17,9 +17,9 @@
 <meta name="keywords" content="">
 
 
-<meta property="og:title" content="Tech  &middot; King ">
+<meta property="og:title" content="Hugo  &middot; King ">
 <meta property="og:site_name" content="King"/>
-<meta property="og:url" content="http://answer91.github.io/learning/" />
+<meta property="og:url" content="http://answer91.github.io/topics/hugo/" />
 <meta property="og:locale" content="en-us">
 
 
@@ -27,9 +27,9 @@
 
 
 
-<link href="http://answer91.github.io/learning/index.xml" rel="alternate" type="application/rss+xml" title="Tech" />
+<link href="http://answer91.github.io/topics/hugo/index.xml" rel="alternate" type="application/rss+xml" title="Hugo" />
 
-<link rel="canonical" href="http://answer91.github.io/learning/" />
+<link rel="canonical" href="http://answer91.github.io/topics/hugo/" />
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://answer91.github.io/touch-icon-144-precomposed.png">
 <link href="http://answer91.github.io/favicon.png" rel="icon">
@@ -131,7 +131,7 @@
 
 
 
-<a id="contact-link-rss" class="contact_link" aria-label="RSS" href="http://answer91.github.io/learning/index.xml" type="application/rss+xml">
+<a id="contact-link-rss" class="contact_link" aria-label="RSS" href="http://answer91.github.io/topics/hugo/index.xml" type="application/rss+xml">
   <span class="fa fa-rss-square"></span></a>
 
 
@@ -144,56 +144,45 @@
 </header>
 
 
-<section id="main-content" class="container main_content section">
+<section id="main-content" class="container main_content">
   <header class="container">
-    <h1>Tech
+    <h1>Hugo
 </h1>
 
   </header>
   
-    <div class="container hat">
+    <article class="container content summary">
+  <div class="container hat">
   <h2><a href="http://answer91.github.io/learning/hugo%E6%96%87%E6%A1%A3/">hugo
 </a>
 </h2>
 
 </div>
 
-
+  <p class="container content">
   
-    <div class="container hat">
-  <h2><a href="http://answer91.github.io/learning/dgraph/">Dgraph问题排查方法
-</a>
-</h2>
-
-</div>
-
-
   
-    <div class="container hat">
-  <h2><a href="http://answer91.github.io/learning/linux%E7%B3%BB%E7%BB%9F%E9%BB%98%E8%AE%A4python%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2/">Linux系统默认python版本切换
-</a>
-</h2>
-
-</div>
-
-
+    一、hugo安装 Hugo是golang编写的开源快速搭建静态网站引擎，官方文档https://gohugo.io/getting-started/
+这里以Linux系统为例进行安装，mac及windows系统安装可查看官方文档。
+1、下载对应系统版本的release https://github.com/gohugoio/hugo/releases 将release文件放在/usr/local/bin目录下，这样hugo可以在任意地方运行，或者将hugo所在目录加入环境变量中。
+2、下载GitHub源码进行编译安装（需要下载Go1.11以上版本） mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install  安装好后可以运行下面命令查看是否安装成功
+hugo version  二、生成静态网页 1、生成网页 $ hugo new site abc.com $ tree . ├── archetypes │ └── default.md ├── config.toml ├── content ├── data ├── layouts ├── static └── themes  通过hugo new site命令生成abc.com静态网页目录，目录结构如上。
+ archetypes保存了所写文档的格式
+ config.toml文件保存了相关配置信息（hugo支持yaml、toml、json三种格式）
+ content中保存了所写的具体文档内容
+ data是对不同结构的配置信息
+ layouts保存对应网页显示的信息
+ static保存了网页的图片布局等信息
+ themes是主题信息
+  进入abc.
   
-    <div class="container hat">
-  <h2><a href="http://answer91.github.io/learning/ubuntu14.04%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/">Ubuntu 14.04 xfce中文输入法安装
-</a>
-</h2>
 
-</div>
+
+</p>
 
 
   
-    <div class="container hat">
-  <h2><a href="http://answer91.github.io/learning/vscode%E6%8F%92%E4%BB%B6%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85/">VsCode插件手动安装
-</a>
-</h2>
-
-</div>
-
+</article>
 
   
   
