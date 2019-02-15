@@ -3,38 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://answer91.github.io/about/</loc>
+    <loc>http://answer91.github.io/learning/dgraph/</loc>
+    <lastmod>2019-02-15T15:20:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://answer91.github.io/learning/linux%E7%B3%BB%E7%BB%9F%E9%BB%98%E8%AE%A4python%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2/</loc>
+    <lastmod>2019-02-15T14:39:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://answer91.github.io/learning/ubuntu14.04%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2019-01-31T16:46:40+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://answer91.github.io/about/about/</loc>
+    <loc>http://answer91.github.io/learning/vscode%E6%8F%92%E4%BB%B6%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2019-01-31T16:46:40+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://answer91.github.io/posts/welcome/</loc>
+    <loc>http://answer91.github.io/life/welcome/</loc>
     <lastmod>2018-09-14T15:50:14+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://answer91.github.io/posts/first/</loc>
+    <loc>http://answer91.github.io/life/first/</loc>
     <lastmod>2018-09-14T14:31:34+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://answer91.github.io/posts/nextpost/first/</loc>
-    <lastmod>2018-09-14T14:31:34+08:00</lastmod>
+    <loc>http://answer91.github.io/about/</loc>
   </url>
   
   <url>
-    <loc>http://answer91.github.io/tags/test/</loc>
-    <lastmod>2017-02-10T15:01:33+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://answer91.github.io/tests/456/</loc>
-    <lastmod>2017-02-10T15:01:33+08:00</lastmod>
+    <loc>http://answer91.github.io/license/</loc>
   </url>
   
   <url>
@@ -56,50 +59,37 @@
   </url>
   
   <url>
-    <loc>http://answer91.github.io/topics/answer/</loc>
-    <lastmod>2017-02-10T15:01:33+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://answer91.github.io/tags/jin/</loc>
-    <lastmod>2017-02-10T15:01:33+08:00</lastmod>
+    <loc>http://answer91.github.io/topics/dgraph/</loc>
+    <lastmod>2019-02-15T15:20:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://answer91.github.io/</loc>
+    <lastmod>2019-02-15T15:20:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://answer91.github.io/life/</loc>
+    <lastmod>2018-09-14T15:50:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://answer91.github.io/topics/linux/</loc>
     <lastmod>2019-01-31T16:46:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://answer91.github.io/tags/king/</loc>
-    <lastmod>2017-02-10T15:01:33+08:00</lastmod>
+    <loc>http://answer91.github.io/topics/python/</loc>
+    <lastmod>2019-02-15T14:39:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://answer91.github.io/posts/</loc>
-    <lastmod>2018-09-14T15:50:14+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://answer91.github.io/tags/</loc>
-    <lastmod>2017-02-10T15:01:33+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://answer91.github.io/tags/</loc>
-    <lastmod>2017-02-10T15:01:33+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://answer91.github.io/tests/</loc>
-    <lastmod>2017-02-10T15:01:33+08:00</lastmod>
-    <priority>0</priority>
+    <loc>http://answer91.github.io/learning/</loc>
+    <lastmod>2019-02-15T15:20:40+08:00</lastmod>
   </url>
   
   <url>
@@ -109,14 +99,26 @@
   </url>
   
   <url>
-    <loc>http://answer91.github.io/tags/ttt/</loc>
-    <lastmod>2017-02-10T15:01:33+08:00</lastmod>
+    <loc>http://answer91.github.io/topics/ubuntu/</loc>
+    <lastmod>2019-02-15T14:39:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://answer91.github.io/tags/wen/</loc>
-    <lastmod>2017-02-10T15:01:33+08:00</lastmod>
+    <loc>http://answer91.github.io/topics/vscode/</loc>
+    <lastmod>2019-01-31T16:46:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://answer91.github.io/topics/%E6%8F%92%E4%BB%B6/</loc>
+    <lastmod>2019-01-31T16:46:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://answer91.github.io/topics/%E8%BE%93%E5%85%A5%E6%B3%95/</loc>
+    <lastmod>2019-01-31T16:46:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   

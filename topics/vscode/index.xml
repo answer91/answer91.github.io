@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vscode on King</title>
+    <link>http://answer91.github.io/topics/vscode/</link>
+    <description>Recent content in Vscode on King</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>wwkanswer@gmail.com (answer-king)</managingEditor>
+    <webMaster>wwkanswer@gmail.com (answer-king)</webMaster>
+    <copyright>©2019 answer-king</copyright>
+    <lastBuildDate>Thu, 31 Jan 2019 16:46:40 +0800</lastBuildDate>
+    
+	<atom:link href="http://answer91.github.io/topics/vscode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VsCode插件手动安装</title>
+      <link>http://answer91.github.io/learning/vscode%E6%8F%92%E4%BB%B6%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Thu, 31 Jan 2019 16:46:40 +0800</pubDate>
+      <author>wwkanswer@gmail.com (answer-king)</author>
+      <guid>http://answer91.github.io/learning/vscode%E6%8F%92%E4%BB%B6%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85/</guid>
+      <description>VsCode是款轻量级的编程环境，提供了丰富的插件库，由于本人机器只能通过浏览器代理浏览网页，所以插件安装就比较麻烦，只能先下载下来再手动安装，具体方法如下。
+1、下载需要的vscode版本 https://code.visualstudio.com/Download
+
+我的是Ubuntu系统，下载的deb版本，通过dpkg安装
+sudo dpkg -i xxx.deb
+安装完后在菜单中就可以找到vscode，打开vscode
+
+如果打不开，运行下面一段代码
+sudo sed -i &amp;rsquo;s/BIG-REQUESTS/_IG-REQUESTS/&amp;rsquo; /usr/lib/x86_64-linux-gnu/libxcb.so.1
+2、安装插件
+网络正常的情况下，直接通过ctrl+shift+p打开命令工具，输入install 即可出现插件安装命令，进入界面直接搜索需要安装的插件即可。
+
+网络不正常，需要手动下载vsix插件，进入插件官网搜索需要的插件，进入插件页面然后下载，https://marketplace.visualstudio.com/vscode。
+
+下载在右侧链接中
+
+下载后即可进行手动安装，vscode也提供了相关命令
+
+也可以通过界面进行安装，切换到插件安装目录，点击左边展开按钮，找到安装路径，如下：</description>
+    </item>
+    
+  </channel>
+</rss>

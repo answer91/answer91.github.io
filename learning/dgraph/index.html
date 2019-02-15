@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Dgraph问题排查方法  &middot; King</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="Dgraph问题排查方法  &middot; King ">
+<meta property="og:site_name" content="King"/>
+<meta property="og:url" content="http://answer91.github.io/learning/dgraph/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2019-02-15T15:20:40&#43;08:00" />
+<meta property="og:article:modified_time" content="2019-02-15T15:20:40&#43;08:00" />
+
+  
+
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Dgraph问题排查方法",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2019-02-15",
+    "description": "",
+    "wordCount": 136
+  }
+</script>
+
+
+
+<link rel="canonical" href="http://answer91.github.io/learning/dgraph/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://answer91.github.io/touch-icon-144-precomposed.png">
+<link href="http://answer91.github.io/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.48" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'Your Google Analytics tracking code', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="http://answer91.github.io/">
+  King
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  一江春水向东流
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="http://answer91.github.io/">主页</a>
+
+
+  
+<a href="http://answer91.github.io/about">关于</a>
+
+<a href="http://answer91.github.io/learning" title="Show list of posts">技术</a>
+
+<a href="http://answer91.github.io/life" title="Show list of ttests">生活</a>
+
+<a href="http://answer91.github.io/topics" title="Show list of tags">分类</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" aria-label="Email" href="mailto:wwkanswer@gmail.com">
+  <span class="fa fa-envelope-square"></span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" aria-label="Github" href="https://github.com/answer91">
+  <span class="fa fa-github-square"></span></a>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Dgraph问题排查方法
+</h1>
+
+</header>
+
+  <div class="container content">
+  
+
+<p>Dgraph是go语言开发的，所以go语言的相关性能检测工具适合查询，同时可以借助dgraph自带的相关工具和操作系统自带的命令。</p>
+
+<h2 id="1-go语言性能检测工具pprof">1、go语言性能检测工具pprof</h2>
+
+<h3 id="1-go-tool-pprof-http-ip-port-debug-pprof-profile-检测cpu使用情况">(1) go tool pprof  <a href="http://ip:port/debug/pprof/profile(检测cpu使用情况">http://ip:port/debug/pprof/profile(检测cpu使用情况</a>)</h3>
+
+<p>例如：go tool pprof  localhost:8080/debug/pprof/profile进入命令界面
+ <div align=center> <img src="https://i.loli.net/2019/02/15/5c6663958ce74.png" alt="5c6663958ce74" /></div></p>
+
+<p>通过help可以查看输入的命令，这里常用的top命令显示默认占用CPU最多的10个函数
+ <div align=center> <img src="https://i.imgur.com/zKnTGLD.png" alt="" /> </div></p>
+
+<p>通过输入web命令可以将结果在浏览器中显示，更加直观，需要安装Graphviz。
+ <div align=center> <img src="https://i.imgur.com/amnNMV5.png" alt="" /> </div>
+ <div align=center> <img src="https://i.imgur.com/NLKQbWp.png" alt="" /> </div></p>
+
+<h3 id="2-go-tool-pprof-http-ip-port-debug-pprof-heap-检测堆内存使用情况">(2) go tool pprof  <a href="http://ip:port/debug/pprof/heap(检测堆内存使用情况">http://ip:port/debug/pprof/heap(检测堆内存使用情况</a>)</h3>
+
+<p>例如：go tool pprof  <a href="http://localhost:8080/debug/pprof/heap进入命令界面">http://localhost:8080/debug/pprof/heap进入命令界面</a>
+ <div align=center> <img src="https://i.loli.net/2019/02/15/5c66666ae6853.png" alt="5c66666ae6853" /> </div></p>
+
+<p>同上，可以通过help查看输入的命令，输入top命令显示占用内存前10的函数
+ <div align=center> <img src="https://i.imgur.com/dv5GqCg.png" alt="" /> </div></p>
+
+<p>同样，可以通过web命令直观的进行显示
+ <div align=center> <img src="https://i.imgur.com/fBAejj9.png" alt="" /> </div></p>
+
+<p>通过help命令，可以发现pprof的性能情况可以通过ps、svg、pdf等多种形式输出，有些形式的显示需要安装相应的依赖工具。</p>
+
+<h3 id="3-gc垃圾收集">(3) gc垃圾收集</h3>
+
+<p>Golang自带gc，在不改动代码的情况下，可以设置GODEBUG=gctrace=1环境变量启动程序，来向标准错误输出打印gc log。</p>
+
+<p>例如：GODEBUG=gctrace =1 ./xxxx.exe or GODEBUG=gctrace =1 go run main.go
+程序将会显示gc信息
+ <div align=center> <img src="https://i.imgur.com/7bIGLBm.png" alt="" /> </div></p>
+
+<p>每行显示信息的含义如下：</p>
+
+<p>gc 1 @2.104s 0%: 0.018+1.3+0.076 ms clock, 0.054+0.<sup>35</sup>&frasl;<sub>1</sub>.0/3.0+0.23 ms cpu, 4-&gt;4-&gt;3 MB, 5 MB</p>
+
+<p>goal, 4 P</p>
+
+<p>1 表示第一次执行</p>
+
+<p>@2.104s 表示程序执行的总时间</p>
+
+<p>0% 垃圾回收时间占用的百分比</p>
+
+<p>0.018+1.3+0.076 ms clock 垃圾回收的时间，分别为STW（stop-the-world）清扫的时间, 并发标记和扫描的时间，STW标记的时间</p>
+
+<p>0.054+0.<sup>35</sup>&frasl;<sub>1</sub>.0/3.0+0.23 ms cpu 垃圾回收占用cpu时间</p>
+
+<p>4-&gt;4-&gt;3 MB 堆的大小，gc后堆的大小，存活堆的大小</p>
+
+<p>5 MB goal 整体堆的大小</p>
+
+<p>4 P 使用的处理器数量</p>
+
+<p>系统内存回收信息</p>
+
+<p>scvg0: inuse: 426, idle: 0, sys: 427, released: 0, consumed: 427 (MB)</p>
+
+<p>426 使用多少M内存</p>
+
+<p>0 剩下要清除的内存</p>
+
+<p>427 系统映射的内存</p>
+
+<p>0 释放的系统内存</p>
+
+<p>427 申请的系统内存</p>
+
+<p>具体可以查看官方文档：
+<a href="https://godoc.org/runtime?spm=a2c4e.11153940.blogcont573743.11.42f31815StZggq">https://godoc.org/runtime?spm=a2c4e.11153940.blogcont573743.11.42f31815StZggq</a></p>
+
+<h2 id="2-dgraph自带工具">2、dgraph自带工具</h2>
+
+<p>Dgraph自带一些工具进行相关信息查询，可通过官网<a href="https://docs.dgraph.io/查看相关比较详细的介绍，下面介绍">https://docs.dgraph.io/查看相关比较详细的介绍，下面介绍</a>
+一下部分工具简单的用法。</p>
+
+<h3 id="1-dgraph-ratel">(1) dgraph ratel</h3>
+
+<p>直接运行dgraph ratel工具，可以配置ip、port等参数，然后在浏览器中输入对应ip:port
+ <div align=center> <img src="https://i.loli.net/2019/02/15/5c6666e748573.png" alt="5c6666e748573" /> </div>
+ <div align=center> <img src="https://i.imgur.com/ZbXsV7R.png" alt="" /> </div></p>
+
+<p>localhost可以进行ip、port切换
+ <div align=center> <img src="https://i.imgur.com/MMMeYLo.png" alt="" /> </div></p>
+
+<p>console进行query、mutate、alter操作，输入相关命令后直接run就可以，下方会保留之前输入的命令记录，同时对于查询会显示json及图形化结果。
+ <div align=center> <img src="https://i.imgur.com/m7ZMFIq.png" alt="" /> </div>
+ <div align=center> <img src="https://i.imgur.com/7wAu140.png" alt="" /> </div></p>
+
+<p>schema中可以进行添加谓词，查询索引，删除信息等
+ <div align=center> <img src="https://i.imgur.com/aE02FnR.png" alt="" /> </div></p>
+
+<h3 id="2-curl-ip-port-debug-vars">(2) curl ip:port/debug/vars</h3>
+
+<p>该curl命令可以查看dgraph中的统计信息，例如：curl localhost:8080/debug/vars
+ <div align=center> <img src="https://i.loli.net/2019/02/15/5c66673478247.png" alt="5c66673478247" /> </div></p>
+
+<p>也可以通过浏览器进行显示，以json格式输出
+ <div align=center> <img src="https://i.imgur.com/hnZWvuq.png" alt="" /> </div></p>
+
+<p>具体每条信息所表示的含义可以查看官方文档。</p>
+
+<h1 id="3-系统自带命令">3、系统自带命令</h1>
+
+<p>top命令查看系统内存使用情况</p>
+
+<p><div align=center> <img src="https://i.loli.net/2019/02/15/5c66679fe844a.png" alt="5c66679fe844a" /> </div></p>
+
+<p><strong><em>参考文献：</em></strong></p>
+
+<p>【1】<a href="https://blog.csdn.net/u012210379/article/details/50443660">https://blog.csdn.net/u012210379/article/details/50443660</a></p>
+
+<p>【2】<a href="https://github.com/hyper0x/go_command_tutorial">https://github.com/hyper0x/go_command_tutorial</a></p>
+
+<p>【3】<a href="https://blog.csdn.net/WaltonWang/article/details/54019891">https://blog.csdn.net/WaltonWang/article/details/54019891</a></p>
+
+<p>【4】<a href="https://studygolang.com/articles/2763">https://studygolang.com/articles/2763</a></p>
+
+<p>【5】<a href="https://my.oschina.net/u/2374678/blog/799477">https://my.oschina.net/u/2374678/blog/799477</a></p>
+
+<p>【6】<a href="https://studygolang.com/articles/2498">https://studygolang.com/articles/2498</a></p>
+
+<p>【7】<a href="https://docs.dgraph.io/">https://docs.dgraph.io/</a></p>
+
+<p>【8】<a href="https://www.cnblogs.com/zhoug2020/p/6336453.html">https://www.cnblogs.com/zhoug2020/p/6336453.html</a></p>
+
+</div>
+
+
+  
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="http://answer91.github.io/license">license</a>
+
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  Welcome to my blog!!
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  ©2019 answer-king
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//your_disqus_shortname.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>
+

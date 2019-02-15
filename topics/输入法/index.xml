@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>输入法 on King</title>
+    <link>http://answer91.github.io/topics/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+    <description>Recent content in 输入法 on King</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>wwkanswer@gmail.com (answer-king)</managingEditor>
+    <webMaster>wwkanswer@gmail.com (answer-king)</webMaster>
+    <copyright>©2019 answer-king</copyright>
+    <lastBuildDate>Thu, 31 Jan 2019 16:46:40 +0800</lastBuildDate>
+    
+	<atom:link href="http://answer91.github.io/topics/%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu 14.04 xfce中文输入法安装</title>
+      <link>http://answer91.github.io/learning/ubuntu14.04%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Thu, 31 Jan 2019 16:46:40 +0800</pubDate>
+      <author>wwkanswer@gmail.com (answer-king)</author>
+      <guid>http://answer91.github.io/learning/ubuntu14.04%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/</guid>
+      <description>这里介绍的是基于fcitx框架的输入法，自带的ibus框架以后再讨论。 这里介绍的偏向于手动安装包
+1、安装fcitx框架
+这里一般配置好源后便可安装
+sudo apt-get install fcitx
+2、安装sogou/google/wbpy输入法
+搜狗输入法去官网下载，本机测试时需要的版本为
+sogoupinyin_2.1.0.0086_amd64.deb
+安装：sudo dpkg -i sogoupinyin_2.1.0.0086_amd64.deb
+其他输入法安装版本可以去官网下载，安装方法同搜狗拼音 https://packages.ubuntu.com/ 找到对应的Ubuntu版本下搜索并下载
+3、setting——&amp;gt;fcitx-configuration，将输入法添加到input methord中
+至此，重启即可。
+由于使用的是xfce桌面环境，在安装完后会出现添加输入法找不到搜狗的情况，可能需要先重启一下，同时要将keyboard作为默认选择，否则不能进行正常的中英文切换。安装完后，发现系统的language support没有了，可能与keyboard有冲突，还需要研究下。(安装了im-switch与语言支持冲突，二者只能保留一个)
+可运行sudo apt-get install language-selector-gnome换成语言支持</description>
+    </item>
+    
+  </channel>
+</rss>

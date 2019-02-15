@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>King </title>
+  <title>Ubuntu 14.04 xfce中文输入法安装  &middot; King</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -17,19 +17,39 @@
 <meta name="keywords" content="">
 
 
-<meta property="og:title" content="King ">
+<meta property="og:title" content="Ubuntu 14.04 xfce中文输入法安装  &middot; King ">
 <meta property="og:site_name" content="King"/>
-<meta property="og:url" content="http://answer91.github.io/" />
+<meta property="og:url" content="http://answer91.github.io/learning/ubuntu14.04%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/" />
 <meta property="og:locale" content="en-us">
 
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2019-01-31T16:46:40&#43;08:00" />
+<meta property="og:article:modified_time" content="2019-01-31T16:46:40&#43;08:00" />
+
+  
+
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Ubuntu 14.04 xfce中文输入法安装",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2019-01-31",
+    "description": "",
+    "wordCount": 27
+  }
+</script>
 
 
 
-<link href="http://answer91.github.io/index.xml" rel="alternate" type="application/rss+xml" title="King" />
-
-<link rel="canonical" href="http://answer91.github.io/" />
+<link rel="canonical" href="http://answer91.github.io/learning/ubuntu14.04%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/" />
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://answer91.github.io/touch-icon-144-precomposed.png">
 <link href="http://answer91.github.io/favicon.png" rel="icon">
@@ -131,9 +151,6 @@
 
 
 
-<a id="contact-link-rss" class="contact_link" aria-label="RSS" href="http://answer91.github.io/index.xml" type="application/rss+xml">
-  <span class="fa fa-rss-square"></span></a>
-
 
 
 </div>
@@ -144,21 +161,53 @@
 </header>
 
 
-<section id="main-content" class="container main_content homepage">
-  <header class="container header">
-    <h1>King
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Ubuntu 14.04 xfce中文输入法安装
 </h1>
 
-    <span>last update: <time datetime="2019-02-15T15:20:40&#43;08:00">15 February at 3:20pm</time>
-</span>
+</header>
 
-  </header>
-  
-  
-  
+  <div class="container content">
+  <p>这里介绍的是基于fcitx框架的输入法，自带的ibus框架以后再讨论。
+这里介绍的偏向于手动安装包</p>
 
-</section>
+<p><strong>1、安装fcitx框架</strong></p>
 
+<p>这里一般配置好源后便可安装</p>
+
+<p>sudo apt-get install fcitx</p>
+
+<p><strong>2、安装sogou/google/wbpy输入法</strong></p>
+
+<p>搜狗输入法去官网下载，本机测试时需要的版本为</p>
+
+<p>sogoupinyin_2.1.0.0086_amd64.deb</p>
+
+<p>安装：sudo dpkg -i sogoupinyin_2.1.0.0086_amd64.deb</p>
+
+<p>其他输入法安装版本可以去官网下载，安装方法同搜狗拼音
+<a href="https://packages.ubuntu.com/">https://packages.ubuntu.com/</a> 找到对应的Ubuntu版本下搜索并下载</p>
+
+<p><img src="https://i.imgur.com/uNPI813.png" alt="" /></p>
+
+<p><img src="https://i.imgur.com/KKYhXhd.png" alt="" /></p>
+
+<p><strong>3、setting——&gt;fcitx-configuration，将输入法添加到input methord中</strong></p>
+
+<p><img src="https://i.imgur.com/KHU0fVO.png" alt="" /></p>
+
+<p>至此，重启即可。</p>
+
+<p>由于使用的是xfce桌面环境，在安装完后会出现添加输入法找不到搜狗的情况，可能需要先重启一下，同时要将keyboard作为默认选择，否则不能进行正常的中英文切换。安装完后，发现系统的language support没有了，可能与keyboard有冲突，还需要研究下。(安装了im-switch与语言支持冲突，二者只能保留一个)</p>
+
+<p>可运行sudo apt-get install language-selector-gnome换成语言支持</p>
+
+</div>
+
+
+  
+</article>
       <footer id="main-footer" class="container main_footer">
   
 

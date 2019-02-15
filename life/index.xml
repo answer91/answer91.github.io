@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>341 on King</title>
-    <link>http://answer91.github.io/topics/341/</link>
-    <description>Recent content in 341 on King</description>
+    <title>Life on King</title>
+    <link>http://answer91.github.io/life/</link>
+    <description>Recent content in Life on King</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>wwkanswer@gmail.com (answer-king)</managingEditor>
     <webMaster>wwkanswer@gmail.com (answer-king)</webMaster>
     <copyright>©2019 answer-king</copyright>
-    <lastBuildDate>Fri, 14 Sep 2018 14:31:34 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Sep 2018 15:50:14 +0800</lastBuildDate>
     
-	<atom:link href="http://answer91.github.io/topics/341/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://answer91.github.io/life/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Welcome</title>
+      <link>http://answer91.github.io/life/welcome/</link>
+      <pubDate>Fri, 14 Sep 2018 15:50:14 +0800</pubDate>
+      <author>wwkanswer@gmail.com (answer-king)</author>
+      <guid>http://answer91.github.io/life/welcome/</guid>
+      <description>qweqweqweq</description>
+    </item>
     
     <item>
       <title>First</title>
